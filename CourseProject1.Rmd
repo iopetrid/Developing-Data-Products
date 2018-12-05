@@ -1,0 +1,29 @@
+---
+title: "Course Project 1"
+output: html_document
+author: Ioannis Petridis
+date: December 5, 2018
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Developing Data Products - Course Project - Week 2
+
+#### Create the map of Athens and a link of the Pathenon to get some info
+```{r, echo=FALSE}
+library(leaflet)
+
+#create the info link
+parthenon<-c("<a href='https://en.wikipedia.org/wiki/Parthenon'>Parthenon</a>")
+
+# create the map
+AthensMap<- leaflet() %>% addTiles()
+leaflet() %>%
+  addTiles() %>%
+  addMarkers(lat=37.97025, lng=23.72247, popup = parthenon)
+
+
+
+```
